@@ -8,7 +8,6 @@ implementation of it for React Native. For more information about how
 the animations behind this work, check out the Rebound section of the
 [React Native Animation Guide](https://facebook.github.io/react-native/docs/animations.html)
 
-
 ## Add it to your project
 
 1. Run `npm install react-native-scrollable-tab-view --save`
@@ -108,6 +107,5 @@ Please attach video or gif to PR's and issues it is super helpful.
 <a href="https://github.com/jclem/gifify" target="_blank">How to make gif from video</a>
 
 ---
+<a href="https://github.com/ptomasroos/react-native-scrollable-tab-view/issues/898#issuecomment-405175960">如何设置指定宽度underline</a>
 
-**MIT Licensed**
-# scrollable-react-native-scrollable-tab-view
