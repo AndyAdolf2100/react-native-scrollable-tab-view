@@ -110,19 +110,28 @@ const ScrollableTabBar = createReactClass({
     const lineRight = this._tabsMeasurements[position].right;
 
     if (position < tabCount - 1) {
-      const nextTabLeft = this._tabsMeasurements[position + 1].left;
-      const nextTabRight = this._tabsMeasurements[position + 1].right;
+        const nextTabLeft = this._tabsMeasurements[position + 1].left;
+        const nextTabRight = this._tabsMeasurements[position + 1].right;
 
-      const newLineLeft = (pageOffset * nextTabLeft + (1 - pageOffset) * lineLeft);
-      const newLineRight = (pageOffset * nextTabRight + (1 - pageOffset) * lineRight);
+        const newLineLeft = (pageOffset * nextTabLeft + (1 - pageOffset) * lineLeft);
+        const newLineRight = (pageOffset * nextTabRight + (1 - pageOffset) * lineRight);
 
-      this.state._leftTabUnderline.setValue(newLineLeft);
-      this.state._widthTabUnderline.setValue(newLineRight - newLineLeft);
+        console.log(newLineLeft);
+        console.log(newLineRight);
+
+        //this.state._leftTabUnderline.setValue(newLineLeft);
+        //this.state._widthTabUnderline.setValue(newLineRight - newLineLeft);
+
+        this.state._leftTabUnderline.setValue(newLineLeft + (newLineRight - newLineLeft - this.props.underlineWidth) / 2);
+        this.state._widthTabUnderline.setValue(this.props.underlineWidth);
     } else {
-      this.state._leftTabUnderline.setValue(lineLeft);
-      this.state._widthTabUnderline.setValue(lineRight - lineLeft);
+        //this.state._leftTabUnderline.setValue(lineLeft);
+        //this.state._widthTabUnderline.setValue(lineRight - lineLeft);
+
+        this.state._leftTabUnderline.setValue(lineLeft + (lineRight - lineLeft - this.props.underlineWidth) / 2);
+        this.state._widthTabUnderline.setValue(this.props.underlineWidth);
     }
-  },
+  }
 
   renderTab(name, page, isTabActive, onPressHandler, onLayoutHandler) {
     const { activeTextColor, inactiveTextColor, textStyle, } = this.props;
