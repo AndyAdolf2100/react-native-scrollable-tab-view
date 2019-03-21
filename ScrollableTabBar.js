@@ -131,7 +131,7 @@ const ScrollableTabBar = createReactClass({
         this.state._leftTabUnderline.setValue(lineLeft + (lineRight - lineLeft - this.props.underlineWidth) / 2);
         this.state._widthTabUnderline.setValue(this.props.underlineWidth);
     }
-  }
+  },
 
   renderTab(name, page, isTabActive, onPressHandler, onLayoutHandler) {
     const { activeTextColor, inactiveTextColor, textStyle, } = this.props;
